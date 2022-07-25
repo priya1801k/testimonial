@@ -1,0 +1,132 @@
+*{
+    padding: 0;
+    margin: 0;
+   box-sizing: border-box;
+}
+body{
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: white;
+}
+main{
+    display: grid;
+    max-width: 1150px;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(2,min-content);
+    grid-gap: 20px;
+}
+.about{
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(217,20%,35%);
+    box-shadow: 0 10px 20px rgba(0, 0,0, 0);
+    border-radius: 12px;
+    padding:30px 40px;
+}
+.name-and-grad{
+    display: flex;
+    align-items: center;
+    color: hsl(0,0%,81);
+    margin-bottom: 10px;
+}
+.head img{
+    width:32px;
+    height:32px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border:2px solid white;
+}
+
+.name{
+    font-weight: 600;
+    font-size: 15px;
+}
+.title{
+    opacity:0.5;
+}
+.experience{
+    color:white;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.description{
+    color:white;
+    line-height: 1.5;
+    opacity:0.7;
+}
+.about-daniel{
+    grid-column: 1/3;
+    background-image: url("./bg-pattern-quotation.svg");
+    background-color:  hsl(263,55%,52%);
+    background-repeat: no-repeat;
+    background-position: 80% 0;
+}
+ .about-jonathan{
+    grid-column: 3/4;
+}
+.about-jeanette{
+    grid-row:2/3;
+    grid-column: 1/2;
+    /* background-color: #fff; */
+    background-color: aqua;
+}
+.about-patrick{
+    grid-row: 2/3; 
+    grid-column: 2/4;
+}
+.about-kira{
+    grid-row:-1/1;
+    grid-column: 4/5;
+    background-color: aqua; 
+} 
+
+.about-jeanette .experience, 
+.about-jeanette .description,
+.about-jeanette .name-and-grad{
+    color: #222;
+}
+
+.about-kira .experience,
+.about-kira .description,
+.about-kira .name-and-grad{
+    color: #222;
+}
+
+.about-daniel .name-and-grad,
+.about-jonathan .name-and-grad,
+.about-patrick .name-and-grad{
+    color: white;
+}
+
+@media(max-width:1024px){
+    body{
+        padding:20px;
+    }
+    main{
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(3,min-content);
+        width:95%;
+        grid-gap:15px;
+    }
+    .about-daniel{
+    grid-column: 1/3;
+    }
+    .about-jonathan{
+        grid-column: 3/4;
+    }
+    .about-kira{
+        grid-column: 1/4;
+        grid-row: 3/4;
+    }
+}
+
+@media(max-width:768px){
+     main{
+        margin-top:20px;
+        grid-template-columns: repeat(auto-fill,minmax(50%,11fr));
+        grid-template-rows: minmax(auto,auto);
+     }
+} 
